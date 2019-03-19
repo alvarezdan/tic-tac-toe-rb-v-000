@@ -36,3 +36,40 @@ def turn(board)
     turn(board)
   end
 end
+
+def turn_count(board)
+  turns = 0
+  board.each do |play|
+    if play == "X" || play == "O"
+      turns +=1
+    end
+end
+
+def current_player(board)
+  turn_count(board) % 2 == 0? "X" : "O"
+end
+
+def won?(board)
+  WIN_COMBINATIONS.detect do |combo|
+    board[combo[0]] == board[combo[1]] && board[combo[1]] == board[combo[2]]
+    position_taken?(board, combo[0])
+  end
+end
+
+def full?(board)
+  board.all? {|token| token == "X" || token == "O"}
+end
+
+def draw?(board)
+  !won(board) && full?(board)
+end
+
+def over?(board)
+  !won(board) && full?(board)
+end
+
+def winner(board)
+  if winning_combo = won?(board)
+    board[winning_combo.first]
+  end
+end
