@@ -38,11 +38,7 @@ def turn(board)
 end
 
 def turn_count(board)
-  turn = 0
-  board.each do |play|
-    if play == "X" || play == "O"
-      turn += 1
-    end
+  board.count{|token| token == "X" || token == "O"}
 end
 
 def current_player(board)
