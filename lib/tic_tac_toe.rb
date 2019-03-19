@@ -6,7 +6,7 @@ def play(board)
     turn(board)
   end
   if won?(board)
-    puts "Congradulations #{winner(board)}"
+    puts "Congradulations #{winner(board)}!"
   elsif draw?(board)
     puts "Cat's game!"
   end
