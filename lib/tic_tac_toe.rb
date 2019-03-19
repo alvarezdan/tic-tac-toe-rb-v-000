@@ -40,7 +40,7 @@ end
 def turn_count(board)
   turn = 0
   board.each do |play|
-    if play == "X" || play "O"
+    if play == "X" || play == "O"
       turn += 1
     end
 end
