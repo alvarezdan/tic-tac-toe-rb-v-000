@@ -16,3 +16,7 @@ end
 def move(board, index, player_char)
   board[index] = player_char
 end
+
+def position_taken?(board, index)
+  board[index] != " "
+end
